@@ -1,15 +1,25 @@
 ﻿# encoding: utf-8
 require 'fileutils'
 
+# It will generate a folder in the up directory 
 destination_dir = "../_musics"
 Dir.mkdir(destination_dir) unless File.directory?(destination_dir)
+
 exported = 0
-skipped = 0
-errors ||= []
+skipped  = 0
+
+errors = []
+
 Dir['**/*.mp3'].each { |file|
 	parts = file.split(/-/)
 
 	begin
+		# it is expecting your file in this format: '123 - artist name - music name.mp3'
+		# when it's splitted, the we have parts object whith:
+		# [0] = 123
+		# [1] = artist name
+		# [2] = music name.mp3 
+
 		artist = "#{destination_dir}/#{parts[1].strip}"
 		Dir.mkdir(artist) unless File.directory?(artist)
 
