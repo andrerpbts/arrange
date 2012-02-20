@@ -1,0 +1,2 @@
+= Arrange
+This is a simple test script to arrange a folder of mp3 files to another one, in order to organize the files into artist's folders
