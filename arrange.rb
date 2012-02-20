@@ -15,7 +15,7 @@ Dir['**/*.mp3'].each { |file|
 
 	begin
 		# it is expecting your file in this format: '123 - artist name - music name.mp3'
-		# when it's splitted, the we have parts object whith:
+		# when it's splitted, then we have parts object whith:
 		# [0] = 123
 		# [1] = artist name
 		# [2] = music name.mp3 
